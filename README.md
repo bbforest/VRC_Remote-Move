@@ -1,1 +1,1 @@
-# VRChat ¿ø°İ ÀÌµ¿±â VRChat remote move
+# VRChat ì›ê²© ì´ë™ê¸° VRChat remote move

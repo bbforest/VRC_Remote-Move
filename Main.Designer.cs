@@ -45,7 +45,7 @@ namespace VRC_Remote_Move
             // 
             // timer1
             // 
-            this.timer1.Interval = 10000;
+            this.timer1.Interval = 60000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label1
@@ -54,7 +54,7 @@ namespace VRC_Remote_Move
             this.label1.Location = new System.Drawing.Point(10, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(537, 12);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 4;
             this.label1.Text = "대상 주소에서 주기적으로 월드정보를 불러오고 일치하지 않으면 VRChat을 종료 후 실행합니다. v.";
             // 
             // label2
@@ -63,7 +63,7 @@ namespace VRC_Remote_Move
             this.label2.Location = new System.Drawing.Point(10, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 12);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 6;
             this.label2.Text = "대상주소 : ";
             // 
             // label3
@@ -72,7 +72,7 @@ namespace VRC_Remote_Move
             this.label3.Location = new System.Drawing.Point(10, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 12);
-            this.label3.TabIndex = 1;
+            this.label3.TabIndex = 7;
             this.label3.Text = "이동주소 : ";
             // 
             // Remote
@@ -80,7 +80,7 @@ namespace VRC_Remote_Move
             this.Remote.Location = new System.Drawing.Point(70, 24);
             this.Remote.Name = "Remote";
             this.Remote.Size = new System.Drawing.Size(677, 21);
-            this.Remote.TabIndex = 2;
+            this.Remote.TabIndex = 1;
             this.Remote.Text = "http://pgm.bbforest.net/vrm/map.txt";
             // 
             // Map
@@ -98,7 +98,7 @@ namespace VRC_Remote_Move
             this.Ver.Location = new System.Drawing.Point(542, 9);
             this.Ver.Name = "Ver";
             this.Ver.Size = new System.Drawing.Size(41, 12);
-            this.Ver.TabIndex = 1;
+            this.Ver.TabIndex = 5;
             this.Ver.Text = "0.0.0.0";
             // 
             // Run_btn
@@ -106,7 +106,7 @@ namespace VRC_Remote_Move
             this.Run_btn.Location = new System.Drawing.Point(499, 69);
             this.Run_btn.Name = "Run_btn";
             this.Run_btn.Size = new System.Drawing.Size(248, 84);
-            this.Run_btn.TabIndex = 3;
+            this.Run_btn.TabIndex = 0;
             this.Run_btn.Text = "작동시작!";
             this.Run_btn.UseVisualStyleBackColor = true;
             this.Run_btn.Click += new System.EventHandler(this.Run_btn_Click);
@@ -118,13 +118,12 @@ namespace VRC_Remote_Move
             this.listBox1.Location = new System.Drawing.Point(12, 71);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(481, 364);
-            this.listBox1.TabIndex = 4;
+            this.listBox1.TabIndex = 3;
             // 
             // Tray
             // 
             this.Tray.Icon = ((System.Drawing.Icon)(resources.GetObject("Tray.Icon")));
             this.Tray.Text = "notifyIcon1";
-            this.Tray.Visible = true;
             this.Tray.Click += new System.EventHandler(this.Tray_Click);
             // 
             // Main
@@ -142,7 +141,7 @@ namespace VRC_Remote_Move
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
-            this.Text = "Form1";
+            this.Text = "VRChat 원격 월드 이동기";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Move += new System.EventHandler(this.Main_Move);
             this.ResumeLayout(false);
