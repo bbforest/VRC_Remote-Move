@@ -68,6 +68,15 @@ namespace VRC_Remote_Move
                 {
                     Map.Text = new_map; //지금 맵에 새로운 맵 적용
                     List($"{DateTime.Now.ToString("HH:mm")} 새로운 맵 발견 : {new_map}");
+
+                    if (new_map == "stop")
+                    {
+                        //종료 명령 인식시 10분 뒤 종료
+                        Process.Start("shutdown.exe", "-s -t 600");
+                        DialogResult result = MessageBox.Show("10분 뒤 컴퓨터가 종료됩니다.\n종료를 취소하시려면 취소버튼을 눌러주세요.", "파란대나무숲 VRM", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        if (result == DialogResult.Cancel) Process.Start("shutdown.exe", "-a");
+                    }
+
                     try
                     {
                         //맵의 ID와 인스턴스, 지역 분석
