@@ -164,8 +164,7 @@ namespace VRC_Remote_Move
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("프로그램을 종료할까요?\n최소화를 누르면 트레이에서 동작해요!", "파란대나무숲 VRM", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (result == DialogResult.Yes) Environment.Exit(0);
-            else e.Cancel = true;
+            if (result == DialogResult.No) e.Cancel = true;
         }
 
         private void Tray_Click(object sender, EventArgs e)
