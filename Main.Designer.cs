@@ -41,6 +41,8 @@ namespace VRC_Remote_Move
             this.Run_btn = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.Tray = new System.Windows.Forms.NotifyIcon(this.components);
+            this.WinStart_check = new System.Windows.Forms.CheckBox();
+            this.StartTray_check = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // timer1
@@ -62,9 +64,9 @@ namespace VRC_Remote_Move
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(10, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
+            this.label2.Size = new System.Drawing.Size(58, 12);
             this.label2.TabIndex = 6;
-            this.label2.Text = "대상주소 : ";
+            this.label2.Text = "PC이름 : ";
             // 
             // label3
             // 
@@ -81,12 +83,13 @@ namespace VRC_Remote_Move
             this.Remote.Name = "Remote";
             this.Remote.Size = new System.Drawing.Size(677, 21);
             this.Remote.TabIndex = 1;
-            this.Remote.Text = "http://pgm.bbforest.net/vrm/map.txt";
+            this.Remote.TextChanged += new System.EventHandler(this.Remote_TextChanged);
             // 
             // Map
             // 
             this.Map.Location = new System.Drawing.Point(70, 44);
             this.Map.Name = "Map";
+            this.Map.ReadOnly = true;
             this.Map.Size = new System.Drawing.Size(677, 21);
             this.Map.TabIndex = 2;
             this.Map.Text = "https://vrchat.com/home/launch?worldId=wrld_1cff3558-c6e3-43b1-83ab-d551b48d6d50&" +
@@ -126,11 +129,35 @@ namespace VRC_Remote_Move
             this.Tray.Text = "notifyIcon1";
             this.Tray.Click += new System.EventHandler(this.Tray_Click);
             // 
+            // WinStart_check
+            // 
+            this.WinStart_check.AutoSize = true;
+            this.WinStart_check.Location = new System.Drawing.Point(499, 159);
+            this.WinStart_check.Name = "WinStart_check";
+            this.WinStart_check.Size = new System.Drawing.Size(128, 16);
+            this.WinStart_check.TabIndex = 8;
+            this.WinStart_check.Text = "윈도우 시작시 실행";
+            this.WinStart_check.UseVisualStyleBackColor = true;
+            this.WinStart_check.CheckedChanged += new System.EventHandler(this.WinStart_check_CheckedChanged);
+            // 
+            // StartTray_check
+            // 
+            this.StartTray_check.AutoSize = true;
+            this.StartTray_check.Location = new System.Drawing.Point(499, 181);
+            this.StartTray_check.Name = "StartTray_check";
+            this.StartTray_check.Size = new System.Drawing.Size(112, 16);
+            this.StartTray_check.TabIndex = 8;
+            this.StartTray_check.Text = "시작시 트레이로";
+            this.StartTray_check.UseVisualStyleBackColor = true;
+            this.StartTray_check.CheckedChanged += new System.EventHandler(this.StartTray_check_CheckedChanged);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 450);
+            this.Controls.Add(this.StartTray_check);
+            this.Controls.Add(this.WinStart_check);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.Run_btn);
             this.Controls.Add(this.Map);
@@ -143,6 +170,7 @@ namespace VRC_Remote_Move
             this.Name = "Main";
             this.Text = "VRChat 원격 월드 이동기";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
+            this.Load += new System.EventHandler(this.Main_Load);
             this.Move += new System.EventHandler(this.Main_Move);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -161,6 +189,8 @@ namespace VRC_Remote_Move
         private System.Windows.Forms.Button Run_btn;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.NotifyIcon Tray;
+        private System.Windows.Forms.CheckBox WinStart_check;
+        private System.Windows.Forms.CheckBox StartTray_check;
     }
 }
 

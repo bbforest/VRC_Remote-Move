@@ -36,7 +36,7 @@
     </table>
 </form>
 <?php
-$fp = fopen($_POST[PC], "w");
+$fp = fopen("data/" . $_POST[PC], "w");
 fwrite($fp, $_POST[CMD]); 
 fclose($fp); 
 ?>
