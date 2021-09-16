@@ -98,6 +98,7 @@ namespace VRC_Remote_Move
                 Run_Set();
                 List("오류! 이동주소를 찾을 수 없습니다. PC이름을 확인하세요!");
                 MessageBox.Show("이동주소를 찾을 수 없습니다.\nPC이름을 확인하세요!", "파란대나무숲 VRM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Run_Set();
             }
         }
 
@@ -113,6 +114,7 @@ namespace VRC_Remote_Move
             Run = !Run;
             if (Run)
             {
+                Remote.ReadOnly = true;
                 if (Remote.Text == "")
                 {
                     MessageBox.Show("PC 이름이 지정되지 않았습니다.\nPC이름을 지정해주세요!", "파란대나무숲 VRM", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -145,6 +147,7 @@ namespace VRC_Remote_Move
             }
             else
             {
+                Remote.ReadOnly = false;
                 List($"작동상태 : {Run}");
                 timer1.Enabled = false;
                 Remote.ReadOnly = Run;
